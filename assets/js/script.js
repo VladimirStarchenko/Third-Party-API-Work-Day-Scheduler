@@ -47,4 +47,11 @@ function listOfTime() {
     }
     t++;
   }
+  // when I press my save button next to the time slot, the item I have scheduled for that time block saves to my localStorage
+  $(".saveBtn").on("click", function () {
+    var dataId = $(this).attr("data-id");
+    var textbox = $("#" + dataId).val();
+    localStorage.setItem(dataId, textbox);
+  });
 }
+listOfTime();
